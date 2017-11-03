@@ -4,7 +4,7 @@ export const GET_SMURFS = "GET_SMURFS";
 export const ADD_SMURF = "ADD_SMURF";
 
 export const getSmurfs = () => {
-  const smurfsEndpoint = "http://localhost:3000/smurfs";
+  const smurfsEndpoint = "http://localhost:3333/smurfs";
   const smurfs = axios.get(smurfsEndpoint);
   return {
     type: GET_SMURFS,
@@ -13,9 +13,9 @@ export const getSmurfs = () => {
 };
 
 export const addSmurf = smurf => {
-  const promise = axios.post("http://localhost:5000/new-friend", smurf);
+  const smurfs = axios.post("http://localhost:3333/smurfs", smurf);
   return {
     type: ADD_SMURF,
-    payload: promise
+    payload: smurfs
   };
 };
